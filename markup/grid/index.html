@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>06-layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../@lib/core.css">
+    <link rel="stylesheet" href="../../@lib/theme.css">
+    <link rel="stylesheet" href="index.css">
+</head><body class="white"><div class="reveal"><div class="slides">
+
+<section class="center">
+    <h1>Grid</h1>
+
+    <div class="ya-letter" style="text-align: center; font-size: .9em">Несмиянов Артем</div>
+</section>
+
+<!--GRID-->
+
+<section class="center">
+    <div class="grid-slide" style="height: 100%">
+        <div class="bg-blue" style="opacity: 0.8"></div>
+        <div class="bg-blue" style="opacity: 0.6"></div>
+        <div class="bg-blue" style="opacity: 0.4"></div>
+        <div class="bg-blue" style="opacity: 0.2"></div>
+    </div>
+
+    <h1>Грид</h1>
+</section>
+
+<section class="center">
+    <p>grid = сетка</p>
+
+    <p class="fragment">Даёт возможность располагать элементы по сетке!</p>
+
+    <p class="fragment">
+        <span class="green">display: grid</span>
+    </p>
+</section>
+
+<section class="center">
+    <p class="fragment">
+        <span class="underline">грид-контейнер</span> <span class="grey">(grid-container)</span>
+    </p>
+
+    <p class="fragment">
+        <span class="underline">грид-элемент</span> <span class="grey">(grid-item)</span>
+    </p>
+
+    <p class="fragment">
+        <span class="underline">линия</span> <span class="grey">(grid-line)</span>
+    </p>
+
+    <p class="fragment">
+        <span class="underline">ячейка</span> <span class="grey">(grid-cell)</span>
+    </p>
+
+    <p class="fragment">
+        <span class="underline">область</span> <span class="grey">(grid-area)</span>
+    </p>
+
+    <p class="fragment">
+        <span class="underline">дорожка</span> <span class="grey">(grid-track)</span>
+    </p>
+
+    <p class="fragment">
+        <span class="underline">интервал</span> <span class="grey">(grid-gap)</span>
+    </p>
+</section>
+
+<section class="center">
+    <img src="images/grid_lines.png"/>
+</section>
+
+<section class="center">
+    <img src="images/grid_lines_nums.png"/>
+</section>
+
+<section class="center">
+    <img src="images/grid_cell.png"/>
+</section>
+
+<section class="center">
+    <img src="images/grid_area.png"/>
+</section>
+
+<section class="center">
+    <img src="images/grid_track.png"/>
+</section>
+
+<section class="center">
+    <img src="images/grid_gap.png"/>
+</section>
+
+<section class="center">
+    <img src="images/mag_grid.png"/>
+</section>
+
+<section class="center">
+    <p>
+        Чтобы наполнить сетку
+        колонками и&nbsp;рядами
+        существуют свойства
+        <br><span class="green">grid-template-columns</span>
+        и <span class="green">grid-template-rows</span>.
+    </p>
+</section>
+
+<section class="center">
+<pre><code class="css">.container
+{
+    display: grid;
+    grid-template-columns: 100px auto 100px; /* ширины столбцов */
+    grid-template-rows: 100px 100px 100px;   /* высоты рядов    */
+}</code></pre>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+    </div>
+</section>
+
+<section class="center">
+    <pre><code class="css">.container
+{
+    display: grid;
+    grid-template-columns: 100px auto 100px; /* ширины столбцов */
+    grid-template-rows: 100px 100px 100px;   /* высоты рядов    */
+}</code></pre>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a">a</div>
+    </div>
+</section>
+
+<section class="center">
+    <pre><code class="css">.container
+{
+    display: grid;
+    grid-template-columns: 100px auto 100px; /* ширины столбцов */
+    grid-template-rows: 100px 100px 100px;   /* высоты рядов    */
+}</code></pre>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a">a</div>
+        <div class="b">b</div>
+    </div>
+</section>
+
+<section class="center">
+    <pre><code class="css">.container
+{
+    display: grid;
+    grid-template-columns: 100px auto 100px; /* ширины столбцов */
+    grid-template-rows: 100px 100px 100px;   /* высоты рядов    */
+}</code></pre>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+    </div>
+</section>
+
+<section class="center">
+    <pre><code class="css">.container
+{
+    display: grid;
+    grid-template-columns: 100px auto 100px; /* ширины столбцов */
+    grid-template-rows: 100px 100px 100px;   /* высоты рядов    */
+}</code></pre>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+    </div>
+</section>
+
+<section class="center">
+    <pre><code class="css">.container
+{
+    display: grid;
+    grid-template-columns: 100px auto 100px; /* ширины столбцов */
+    grid-template-rows: 100px 100px 100px;   /* высоты рядов    */
+}</code></pre>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+        <div class="e">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <pre><code class="css">.a
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+}
+
+</code></pre>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a" style="grid-column: 1/4">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+        <div class="e">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <div class="two-columns">
+        <pre><code class="css">.a
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+}
+
+</code></pre>
+
+        <pre><code class="css">.b
+{
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
+}
+
+</code></pre>
+    </div>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a" style="grid-row: 1 / 2; grid-column: 1/4">a</div>
+        <div class="b" style="grid-row: 2/4; grid-column: 1 / 2;">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+        <div class="e">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <div class="two-columns">
+        <pre><code class="css">.a
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+}
+
+</code></pre>
+
+       <pre><code class="css">.b
+{
+    grid-row: &#10153; 1 / 4;
+    grid-column: 1 / 2;
+}
+
+</code></pre>
+    </div>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a" style="grid-column: 1 / 4; grid-row: 1 / 2;">a</div>
+        <div class="b" style="grid-row: 1/4; grid-column: 1 /2">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+        <div class="e">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <div class="two-columns">
+        <pre><code class="css">.a
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+    &#10153; z-index: 1;
+}
+</code></pre>
+
+    <pre><code class="css">.b
+{
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+}
+</code></pre>
+    </div>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 95px">2</span>
+        <span style="position: absolute; top: -30px; right: 95px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px auto 100px; grid-template-rows: 100px 100px 100px;">
+        <div class="a" style="grid-column: 1/4; grid-row: 1 / 2; z-index: 1">a</div>
+        <div class="b" style="grid-row: 1/4; grid-column: 1 /2">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+        <div class="e">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <p>Размер дорожки можно указывать в <span class="green">fr</span> – долях свободного места.</p>
+
+    <p class="fragment">
+        Свободное место вычисляется после расположения всех элементов фиксированных размеров.
+    </p>
+</section>
+
+<section class="center">
+    <div class="two-columns">
+    <pre><code class="css">.container
+{
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+}</code></pre>
+    </div>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 100px">2</span>
+        <span style="position: absolute; top: -30px; left: 535px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px 1fr 1fr; grid-template-rows: 100px 100px 100px;">
+        <div class="a fragment" data-fragment-index="0">a</div>
+        <div class="b fragment" data-fragment-index="0">b</div>
+        <div class="c fragment" data-fragment-index="0">c</div>
+        <div class="d fragment" data-fragment-index="0">d</div>
+        <div class="e fragment" data-fragment-index="0">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <pre><code class="css">.a
+{
+    grid-column: span 3;
+}
+
+    </code></pre>
+
+    <div class="grey " style="width: 100%; position: relative; font-size: .5em">
+        <span style="position: absolute; top: -30px; left: -5px">1</span>
+        <span style="position: absolute; top: -30px; left: 100px">2</span>
+        <span style="position: absolute; top: -30px; left: 535px">3</span>
+        <span style="position: absolute; top: -30px; right: -3px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px 1fr 1fr; grid-template-rows: 100px 100px 100px;">
+        <div class="a" style="grid-column: span 3">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+        <div class="e">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <div class="code-two-columns">
+    <pre><code class="css">.a
+{
+    grid-column: span 3;
+}
+
+    </code></pre>
+        <pre><code class="css">.b
+{
+    grid-row: span 2;
+}
+</code></pre>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grey " style="position: relative; font-size: .5em">
+        <span style="position: absolute; top: -7px; left: -17px">1</span>
+        <span style="position: absolute; top: 84px; left: -17px">2</span>
+        <span style="position: absolute; top: 184px; left: -17px">3</span>
+        <span style="position: absolute; top: 281px; left: -17px">4</span>
+    </div>
+
+    <div class="grid-ex " style="grid-template-columns: 100px 1fr 1fr; grid-template-rows: 100px 100px 100px;">
+        <div class="a" style="grid-column: span 3">a</div>
+        <div class="b" style="grid-row: span 2">b</div>
+        <div class="c">c</div>
+        <div class="d" >d</div>
+        <div class="e">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <p>В контейнере можно создавать именованные области с&nbsp;помощью свойства <span class="green">grid-template-areas</span>.</p>
+
+    <p class="fragment">Поместить элемент в область можно свойством <span class="green">grid-area</span>.</p>
+</section>
+
+<section class="center">
+    <div class="two-columns">
+        <pre><code class="css">.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas: 'sand  water'
+                         'sand  water'
+                         'grass grass';
+}</code></pre>
+
+       <pre><code class="css">.a {
+    grid-area: grass;
+}
+.b {
+    grid-area: sand;
+}
+.c {
+   grid-area: water;
+}</code></pre>
+    </div>
+
+    <div class="grid-ex" style="grid-template-columns: 1fr 1fr; grid-template-rows: 100px 100px 100px; grid-template-areas: 'sand water' 'sand water' 'grass grass'">
+        <div class="c" style="grid-area: grass">a</div>
+        <div class="d" style="grid-area: sand">b</div>
+        <div class="e" style="grid-area: water">c</div>
+    </div>
+</section>
+
+<section class="center">
+    <div class="two-columns">
+    <pre><code class="css">.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas: 'sand  water'
+                         'sand  water'
+                         '.     grass';
+}</code></pre>
+
+            <pre><code class="css">.a {
+    grid-area: grass;
+}
+.b {
+    grid-area: sand;
+}
+.c {
+   grid-area: water;
+}</code></pre>
+    </div>
+
+    <div class="grid-ex" style="grid-template-columns: 1fr 1fr; grid-template-rows: 100px 100px 100px; grid-template-areas: 'sand water' 'sand water' '. grass'">
+        <div class="c" style="grid-area: grass">a</div>
+        <div class="d" style="grid-area: sand">b</div>
+        <div class="e" style="grid-area: water">c</div>
+    </div>
+</section>
+
+<section class="center">
+    <h2>Короче!</h2>
+
+    <p class="fragment">Свойство <span class="green">grid-template</span>:</p>
+
+    <pre class="fragment"><code class="css">.container
+{
+    display: grid;
+    grid-template: 'header  header'  100px
+                   'sidebar content' 100px
+                   'footer  content'  100px
+                    / 100px auto;
+}</code></pre>
+</section>
+
+<section class="center">
+    <p>Используя свойство <span class="green">grid-gap</span>, можно управлять размером интервалов между линиями.</p>
+
+    <p class="fragment">
+        Интервал только между рядами — <span class="green">grid-row-gap</span>,
+        только между столбцами — <span class="green">grid-column-gap</span>.
+    </p>
+</section>
+
+<section class="center">
+    <pre><code class="css">.container
+{
+    grid-column-gap: 1%;
+    grid-row-gap: 16px;
+}</code></pre>
+
+    <div class="grid-ex fragment " style="grid-column-gap: 1%; grid-row-gap: 16px; grid-template-columns: 100px auto; grid-template-rows: 100px 100px 100px; grid-template-areas:'header header' 'sidebar main' 'footer footer'">
+        <div class="a">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+        <div class="e">e</div>
+    </div>
+</section>
+
+<section class="center">
+    <img class="fragment" src="images/Grid_1440.jpg"/>
+
+    <p class="fragment">
+        12 колонок!
+    </p>
+</section>
+
+<section class="center">
+    <p>Писать руками?</p>
+
+    <pre><code class="css">.container
+{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr...;
+}</code></pre>
+
+    <p class="fragment">НЕТ. <span class="fragment">Есть функция <span class="green">repeat()</span></span></p>
+
+    <pre class="fragment"><code class="css">.container
+{
+    grid-template-columns: repeat(12, 1fr);
+}</code></pre>
+</section>
+
+<section class="center">
+    <a href="https://caniuse.com/#feat=css-grid">caniuse.com/#feat=css-grid</a>
+
+    <img src="images/caniuse_grid.png"/>
+</section>
+
+<section class="center">
+    <h2>Полезные ссылки</h2>
+
+    <br>
+
+    <ol>
+        <li><a href="https://www.youtube.com/watch?v=ojKbYz0iKQE" target="_blank">Grid Explained In 7 Minutes</a></li>
+        <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Гайд по гриду</a></li>
+        <li><a href="https://gridbyexample.com/examples/" target="_blank">Grid By Example</a></li>
+        <li><a href="http://cssgridgarden.com" target="_blank">Игра для изучения грида</a></li>
+    </ol>
+</section>
+
+</div></div><script src="../../@lib/core.js"></script></body></html>
