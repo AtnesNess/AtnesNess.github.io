@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Профилирование</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../@lib/core.css">
+    <link rel="stylesheet" href="../../@lib/theme.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="reveal white">
+    <div class="slides">
+        <section style="font-size: 70px;" data-background-image="images/profiling.png">
+                <h2 class="fragment" data-fragment-index="2" style="position: relative; margin-top: 100px; color: #000;">Профилирование и отладка</h2>
+                <p class="fragment" data-fragment-index="1" style="text-align: center;">
+                    <small class="animated" data-fragment-index="2"><span style="color: red">Н</span>есмиянов Артем</small><br>
+                    <small class="animated" style="margin-top: -20px" data-fragment-index="2"><span style="color: red">Р</span>азработчик Яндекс.Практикум</small>
+                </p>
+       </section>
+        <section>
+            <h1 style="color: #000; text-shadow: #000 0 0 5px;">Что это?</h1>
+            <mark>Отладка</mark> - этап разработки компьютерной программы, на котором обнаруживают, локализуют и устраняют ошибки
+        </section> 
+       <section >
+            <h1 style="color: #000; text-shadow: #000 0 0 5px;">Что это?</h1>
+            <mark>Профилирование</mark> - сбор характеристик работы программы, таких как время выполнения отдельных методов, определение потребляемой памяти, вывод стека вызовов и т.д.
+        </section> 
+        <section>
+            <h2 style="position: relative; color: #000; margin-bottom: 50px">Frontend</h2>
+            <div class="fragment">V8 — быстрый движок JavaScript (ECMA-262) от Google, используемый в Chromium браузерах</div>
+            <img class="fragment" src="images/v8.png" style="height: 30vh;" />
+        </section> 
+        <section data-background-image="images/devtools.jpg">
+        </section>
+        <section data-background-image="images/nodejs.jpg">
+        </section>
+        <section>
+            <h2 style="position: relative; color: #000; margin-bottom: 100px">Memory Usage</h2>
+            <img src="images/ramusage.png"  />
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Cpu Usage</h2>
+                <img src="images/cpusage.png"  />
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Виды утечек</h2>
+
+                <span class="fragment">References</span>
+                <ul>
+                    <li class="fragment">Global variables</li>
+                    <li class="fragment">Multiple references</li>
+                    <li class="fragment">Singleton</li>
+                </ul>
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Виды утечек</h2>
+
+                <span>Closures/Scopes</span>
+                <ul>
+                    <li class="fragment">Recursive closures</li>
+                    <li class="fragment">Require in the middle of code</li>
+                    <li class="fragment">Function in loops</li>
+                </ul>
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Виды утечек</h2>
+                <span>OS and Language Objects</span>
+                <ul>
+                    <li class="fragment">Descriptors: files, sockets…</li>
+                    <li class="fragment">setTimeout, setInterval</li>
+                    <li class="fragment">EventEmitter</li>
+                </ul>
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Profiling</h2>
+                <img src="images/leakheapbeforeshoot.png" />
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 20px">Profiling</h2>
+                <img src="images/heapleakshooting.png" style="height: 800px"  />
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Profiling</h2>
+                <img src="images/leakheapaftershoot.png" />
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Profiling</h2>
+                <img src="images/timelinereduxsagaleak.png" />
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Fixing</h2>
+                <img src="images/sagascode.png" style="height: 400px"/>
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Results</h2>
+                <img src="images/leakfixedheap.png"с/>
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Memory Usage</h2>
+                <img src="images/ramusagenow.png"  />
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">CPU Usage</h2>
+                <img src="images/cpunow.png"  />
+        </section>
+        <section>
+                <h2 style="position: relative; color: #000; margin-bottom: 100px">Полезные ссылки</h2>
+                <ul>
+                    <li>
+                        <a href="https://habr.com/ru/company/simbirsoft/blog/337116/">
+                            Обзор инструментов DevTools
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://geekbrains.ru/posts/what_is_pwm">
+                            Производительность веб-приложений
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=0oZa64SB2wM">
+                            Утечки памяти в node.js
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://flaviocopes.com/chrome-devtools-tips/">
+                            DevTools tips
+                        </a>
+                    </li>
+                </ul>
+        </section>
+    </div>
+</div>
+
+<script src="../../@lib/core.js"></script></body></html>

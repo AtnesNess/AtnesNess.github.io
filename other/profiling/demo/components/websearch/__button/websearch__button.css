@@ -1,0 +1,35 @@
+.websearch__button
+{
+    position: relative;
+
+    width: 70px;
+
+    padding: 0 5px;
+
+    background: #fc0;
+
+    border: none;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.websearch__button::after
+{
+    position: absolute;
+    top: 0;
+    right: -20px;
+
+    display: block;
+    width: 0;
+
+    content: '';
+
+    border-style: solid;
+    border-color: transparent;
+    border-left-color: #fc0;
+    border-width: 20px 10px;
+}

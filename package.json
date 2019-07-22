@@ -15,5 +15,8 @@
     "optimize:icons": "cd $npm_package_config_dir && imagemin --plugin=giflossy --plugin=mozjpeg --plugin=pngquant --plugin=svgo icons/* --out-dir icons",
     "pdf": "cd $npm_package_config_dir && decktape -s 640x480 reveal markup/grid/index.html index.pdf",
     "process": "npm-run-all optimize:images optimize:icons pdf"
+  },
+  "dependencies": {
+    "console.table": "^0.10.0"
   }
 }

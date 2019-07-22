@@ -1,0 +1,9 @@
+@import url('./__button//websearch__button.css');
+@import url('./__suggest/websearch__suggest.css');
+
+.websearch
+{
+    display: flex;
+
+    margin-right: 10px; 
+}

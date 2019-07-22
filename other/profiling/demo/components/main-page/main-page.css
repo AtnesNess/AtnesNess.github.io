@@ -1,0 +1,10 @@
+@import url('./__websearch/main-page__websearch.css');
+
+.main-page
+{
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

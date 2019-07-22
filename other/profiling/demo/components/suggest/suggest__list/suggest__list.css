@@ -1,0 +1,9 @@
+@import url('./_visible/suggest__list_visible.css');
+
+.suggest__list
+{
+    position: absolute;
+
+    width: calc(100% - 2px);
+    display: none;
+}

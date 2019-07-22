@@ -1,0 +1,8 @@
+@import url('./__item//list__item.css');
+
+.list
+{
+    background: white;
+
+    text-align: center;
+}
