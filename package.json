@@ -2,7 +2,7 @@
   "name": "slides",
   "private": true,
   "devDependencies": {
-    "decktape": "2.9.0",
+    "decktape": "3.4.1",
     "imagemin-cli": "4.0.0",
     "imagemin-giflossy": "5.1.10",
     "imagemin-mozjpeg": "8.0.0",
